@@ -15,7 +15,7 @@ curl -fsSL https://raw.githubusercontent.com/ihnic/Script/main/sign/sign.sh | ba
 
 ## 创建定时服务
 
-1.使用```cronetab -e ```插入下面的命令（每月1号1点02分重新刷新证书）
+1.使用```crontab -e ```插入下面的命令（每月1号1点02分重新刷新证书）
 
 ```bash
 02 01 1 * *  bash /root/.cert/cron.sh >>/root/.cert/cron.log
