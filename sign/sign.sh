@@ -33,10 +33,11 @@ if ls ./.lego/certificates | grep "$domain"
     cp ./.lego/certificates/$domain.crt /root/.cert/server.crt
     cp ./.lego/certificates/$domain.key /root/.cert/server.key
     echo "#!/bin/sh
-curl -fsSL https://github.com/ihnic/Script/sign/raw/main/sign.sh | bash -s $domain
+curl -fsSL https://raw.githubusercontent.com/ihnic/Script/main/sign/sign.sh | bash -s $domain
 sleep 60
 docker restart aurora " > /root/.cert/cron.sh
-    chmod +x /root/.cert/cron.sh
 else
     echo '证书签发失败'
 fi
+
+chmod +x /root/.cert/cron.sh
